@@ -1,28 +1,53 @@
+
 import React, { useState } from "react";
-import "./../styles/App.css";
-import { Router, Route, Navigate } from "react-router-dom";
-import Login from "./Login";
-import Codeplayground from "./Codeplayground.JS"
+import './../styles/App.css';
+import { BrowserRouter, Routes,Route } from "react-router-dom";
+import Codeplayground from "./Codeplayground.js";
+import Login from "./Login.js";
 
 const App = () => {
+  function handleLogin(value){
+    setLoggedin(value);
+  }
   
- // let loggedin=false;
+  const [loggedin,setLoggedin]=useState(false);
+
   return (
-    <Router>
-      <div>
-        <Route
-          path="/Codeplayground"element={
+    
+    <>
+
+    <BrowserRouter>
+    <Routes>
+    <Route
+          path="/" element={
             loggedin ? (
-              <Codeplayground/>
+              <Codeplayground handleLogin={handleLogin} loggedin={loggedin}/>
             ) : (
               // <Login/>
-              <Navigate to="/login" />
+              <Login handleLogin={handleLogin} loggedin={loggedin}/>
             )
           }
         />
-      </div>
-    </Router>
-  );
-};
+        <Route path="/Codeplayground" element={
+          loggedin ? (
+            <Codeplayground handleLogin={handleLogin} loggedin={loggedin}/>
+          ) : (
+            // <Login/>
+            <Login handleLogin={handleLogin} loggedin={loggedin}/>
+          )
+        }/>
+        <Route path="/Login" element={
+          loggedin ? (
+            <Codeplayground handleLogin={handleLogin} loggedin={loggedin}/>
+          ) : (
+            // <Login/>
+            <Login handleLogin={handleLogin} loggedin={loggedin}/>
+          )
+        }/>
+    </Routes>
+    </BrowserRouter>
+    </>
+  )
+}
 
-export default App;
+export default App

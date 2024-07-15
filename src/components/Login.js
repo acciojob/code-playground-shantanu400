@@ -1,31 +1,30 @@
 import React from "react";
-import { NavLink, useNavigate ,useLocation} from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 
-const Login = () => {
-  let navigate = useNavigate();
- // let location=useLocation();
-  //const [loggedin, setLoggedin] = useState(location.state);
+const Login = (props) => {
+    let navigate = useNavigate();
   return (
     <div>
       <p>You are not authenticated. Login First</p>
 
       <li>
-        <NavLink to="./login">CodePlayGround</NavLink>
+        <NavLink to="/Login">CodePlayGround</NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/Login">Login</NavLink>
       </li>
 
       <button
         onClick={() => {
             //setLoggedin(true);
+            props.handleLogin(true);
           navigate("/Codeplayground");
         }}
       >
         Login
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
