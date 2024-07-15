@@ -24,7 +24,7 @@ const Codeplayground = (props) => {
         <button
           onClick={() => {
             props.handleLogin(false);
-            navigate("/Login");
+            navigate("/");
           }}
         >
           Logout
