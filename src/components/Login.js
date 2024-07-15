@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate} from "react-router-dom";
+import Codeplayground from "./Codeplayground.js";
 
 const Login = (props) => {
     let navigate = useNavigate();
@@ -18,7 +19,7 @@ const Login = (props) => {
         onClick={() => {
             //setLoggedin(true);
             props.handleLogin(true);
-          navigate("/Codeplayground");
+          //navigate("/Codeplayground");
         }}
       >
         Login

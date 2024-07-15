@@ -20,12 +20,10 @@ const App = () => {
     <Routes>
     <Route
           path="/" element={
-            loggedin ? (
-              <Codeplayground handleLogin={handleLogin} loggedin={loggedin}/>
-            ) : (
+            
               // <Login/>
               <Login handleLogin={handleLogin} loggedin={loggedin}/>
-            )
+            
           }
         />
         <Route path="/Codeplayground" element={

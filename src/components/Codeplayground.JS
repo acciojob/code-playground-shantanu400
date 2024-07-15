@@ -12,7 +12,7 @@ const Codeplayground = (props) => {
     <NavLink to="/Codeplayground" onClick={()=>{setEnter(true)}}>
       CodePlayGround
     </NavLink>
-    <NavLink to="/login" onClick={()=>{setViewlogin(true)}}>
+    <NavLink to="/Login" onClick={()=>{setViewlogin(true)}}>
       Login
     </NavLink>
 
